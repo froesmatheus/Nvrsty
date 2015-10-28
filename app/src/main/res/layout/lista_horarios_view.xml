@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_relogio"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/tv_hora_inicio_fim"
+        android:contentDescription="@string/img_horario"
+        android:src="@mipmap/ic_horario" />
+
+    <TextView
+        android:id="@+id/tv_hora_inicio_fim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/iv_relogio"
+        android:layout_toRightOf="@+id/iv_relogio"
+        android:gravity="center|start"
+        android:padding="3dp"
+        android:text="@string/horario" />
+
+    <TextView
+        android:id="@+id/tv_dia_semana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_relogio"
+        android:layout_alignLeft="@+id/tv_hora_inicio_fim"
+        android:layout_alignStart="@+id/tv_hora_inicio_fim"
+        android:padding="3dp"
+        android:text="@string/dia_semana" />
+
+    <TextView
+        android:id="@+id/tv_bloco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_dia_semana"
+        android:layout_alignTop="@+id/tv_hora_inicio_fim"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toLeftOf="@+id/tv_sala"
+        android:layout_toStartOf="@+id/tv_sala"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="@string/bloco" />
+
+    <TextView
+        android:id="@+id/tv_sala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_bloco"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tv_bloco"
+        android:gravity="center"
+        android:padding="3dp"
+        android:text="@string/sala" />
+
+    <ImageView
+        android:id="@+id/iv_posicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_bloco"
+        android:layout_alignTop="@+id/tv_bloco"
+        android:layout_toLeftOf="@+id/tv_bloco"
+        android:layout_toStartOf="@+id/tv_bloco"
+        android:contentDescription="@string/img_lugar"
+        android:src="@mipmap/ic_lugar" />
+
+
+</RelativeLayout>

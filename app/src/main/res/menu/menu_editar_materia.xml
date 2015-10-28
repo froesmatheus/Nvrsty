@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nvrsty.activities.InformacoesMateria">
+
+    <item
+        android:id="@+id/action_editar"
+        android:orderInCategory="99"
+        android:icon="@mipmap/ic_action_edit"
+        app:showAsAction="always"
+        android:title="Editar"/>
+
+    <item
+        android:id="@+id/action_excluir"
+        android:orderInCategory="100"
+        android:icon="@mipmap/ic_action_delete"
+        android:title="Excluir"
+        app:showAsAction="ifRoom" />
+</menu>

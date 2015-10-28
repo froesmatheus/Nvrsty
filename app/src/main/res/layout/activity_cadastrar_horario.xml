@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_horarios"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nvrsty.activities.CadastroHorariosActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context="com.nvrsty.activities.CadastroHorariosActivity"
+        android:layout_below="@+id/toolbar">
+
+
+        <TextView
+            android:id="@+id/tv_nome_materia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dia_semana"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/et_dia_semana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:inputType="none"
+            android:layout_below="@+id/tv_nome_materia"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/tv_horario_inicial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hora_inicio"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/et_dia_semana"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/et_hora_inicial"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:editable="false"
+            android:inputType="none"
+            android:layout_below="@+id/tv_horario_inicial"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/tv_horario_fim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hora_fim"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignTop="@+id/tv_horario_inicial"
+            android:layout_alignLeft="@+id/et_hora_final"
+            android:layout_alignStart="@+id/et_hora_final" />
+
+        <EditText
+            android:id="@+id/et_hora_final"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:editable="false"
+            android:inputType="none"
+            android:layout_above="@+id/tv_sala"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <TextView
+            android:id="@+id/tv_bloco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bloco"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_alignTop="@+id/tv_sala"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/et_bloco"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_below="@+id/tv_bloco"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/tv_sala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sala"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/et_hora_inicial"
+            android:layout_alignLeft="@+id/et_sala"
+            android:layout_alignStart="@+id/et_sala" />
+
+        <EditText
+            android:id="@+id/et_sala"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_alignTop="@+id/et_bloco"
+            android:layout_alignRight="@+id/et_dia_semana"
+            android:layout_alignEnd="@+id/et_dia_semana" />
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+

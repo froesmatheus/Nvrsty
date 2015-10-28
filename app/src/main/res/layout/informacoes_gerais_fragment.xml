@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_informacoes"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!--  Nome da matéria -->
+
+    <!--<EditText-->
+    <!--android:id="@+id/cp_nome_materia"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/textView2"-->
+    <!--android:layout_marginEnd="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:layout_toLeftOf="@+id/textView3"-->
+    <!--android:layout_toStartOf="@+id/textView3"-->
+    <!--android:inputType="textCapWords" />-->
+
+    <EditText
+        android:id="@+id/cp_nome_materia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nome_materia"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:inputType="textCapWords" />
+
+    <!--  Nome do professor -->
+
+    <EditText
+        android:id="@+id/cp_nome_professor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cp_nome_materia"
+        android:layout_alignEnd="@+id/cp_nome_materia" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cp_nome_materia"
+        android:layout_alignStart="@+id/cp_nome_materia"
+        android:layout_below="@+id/cp_nome_materia"
+        android:text="@string/nome_professor"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_nome_materia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cp_nome_materia"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/cp_nome_materia"
+        android:text="@string/nome_disciplina"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cp_nome_materia"
+        android:text="@string/qt_unidades"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageButton
+        android:id="@+id/btn_decremento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cp_unidades"
+        android:layout_alignTop="@+id/btn_incremento"
+        android:layout_toLeftOf="@+id/cp_unidades"
+        android:layout_toStartOf="@+id/cp_unidades"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/decremento"
+        android:src="@mipmap/ic_decrement" />
+
+    <EditText
+        android:id="@+id/cp_unidades"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cp_nome_professor"
+        android:layout_toLeftOf="@+id/btn_incremento"
+        android:layout_toStartOf="@+id/btn_incremento"
+        android:editable="false"
+        android:gravity="center"
+        android:inputType="none" />
+
+
+    <ImageButton
+        android:id="@+id/btn_incremento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cp_unidades"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/incremento"
+        android:src="@mipmap/ic_increment" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/seletor_cor"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/sp_frequencia"
+        android:layout_alignTop="@+id/sp_frequencia"
+        android:layout_toEndOf="@+id/btn_decremento"
+        android:layout_toRightOf="@+id/btn_decremento"
+        android:src="#431342" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sp_frequencia"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_toEndOf="@+id/cp_nome_materia"
+        android:layout_toRightOf="@+id/cp_nome_materia"
+        android:text="@string/cor"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv_sigla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/tv_nome_materia"
+        android:text="@string/sigla"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/cp_sigla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cp_nome_professor"
+        android:text="@string/frequencia"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Spinner
+        android:id="@+id/sp_frequencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/cp_nome_professor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/cp_nome_professor"
+        android:layout_below="@+id/textView6" />
+
+
+</RelativeLayout>

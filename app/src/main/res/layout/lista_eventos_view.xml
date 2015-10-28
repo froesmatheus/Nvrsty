@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/disciplina_relacionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disciplina_relacinada"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/data_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/disciplina_relacionada"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="3dp"
+        android:text="Data - Horário" />
+
+    <ImageView
+        android:id="@+id/img_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/data_horario"
+        android:layout_alignTop="@+id/bloco_sala"
+        android:layout_toLeftOf="@+id/bloco_sala"
+        android:layout_toStartOf="@+id/bloco_sala"
+        android:contentDescription="@string/img_lugar"
+        android:src="@mipmap/ic_lugar" />
+
+    <TextView
+        android:id="@+id/bloco_sala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/data_horario"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="3dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Nvrsty</string>
+    <string name="title_activity_tela_inicial">Nvrsty</string>
+    <string name="btn_disciplinas">Disciplinas</string>
+    <string name="btn_eventos">Eventos</string>
+    <string name="title_activity_lista_materias">Matérias</string>
+    <string name="title_activity_cadastrar_horario">Cadastrar horário</string>
+    <string name="title_activity_cadastrar_evento">Cadastrar evento</string>
+    <string name="title_activity_cadastrar_disciplina">Cadastrar disciplina</string>
+
+    <string name="exibicao_horario">%1$d:%2$d</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_confirmar">Confirmar</string>
+    <string name="nome_disciplina">Nome da disciplina</string>
+    <string name="disciplina_relacinada">Disciplina relacionada</string>
+    <string name="data">Data</string>
+    <string name="nome_professor">Nome do professor</string>
+    <string name="img_horario">Horário</string>
+    <string name="img_lugar">Localização</string>
+    <string name="horario">Horário</string>
+    <string name="dia_semana">Dia da semana</string>
+    <string name="bloco">Bloco</string>
+    <string name="observacoes">Observações</string>
+    <string name="sala">Sala</string>
+    <string name="hora_inicio">Horário inicial</string>
+    <string name="hora_fim">Horário final</string>
+
+    <string name="sigla">Sigla</string>
+    <string name="frequencia">Frequência</string>
+    <string name="cor">Cor</string>
+    <string name="decremento">Decremento</string>
+    <string name="incremento">Incremento</string>
+    <string name="qt_unidades">Quantas unidades?</string>
+    <string name="disciplinas_empty_view">Você ainda não adicionou nenhuma disciplina\nClique no + para adicionar.</string>
+    <string name="horarios_empty_view">Você ainda não adicionou nenhum horário\nClique no + para adicionar.</string>
+    <string name="eventos_empty_view">Você ainda não adicionou nenhum evento\nClique no + para adicionar.</string>
+    <string name="title_activity_lista_eventos">Eventos</string>
+
+</resources>
