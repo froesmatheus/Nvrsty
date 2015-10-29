@@ -36,5 +36,19 @@
     <string name="horarios_empty_view">Você ainda não adicionou nenhum horário\nClique no + para adicionar.</string>
     <string name="eventos_empty_view">Você ainda não adicionou nenhum evento\nClique no + para adicionar.</string>
     <string name="title_activity_lista_eventos">Eventos</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="filtro_titulo">Filtrar:</string>
+    <string name="disciplina">Por disciplina</string>
+    <string name="filtro_dia">Por dia</string>
+    <string name="cancelar">cancelar</string>
+    <string name="adicionar_horario_manual">Adicionar horário manualmente</string>
+    <string name="horarios_preestabelecidos">Horários preestabelecidos</string>
+    <string name="campo_obrigatorio">Campo obrigatório</string>
+    <string name="confirmar_cancelamento">Confirmar cancelamento</string>
+    <string name="confirmar_cancelar_cadastro">Você tem certeza que deseja cancelar o cadastro?</string>
+    <string name="adicionar_disciplina">Adicionar nova disclipina</string>
+    <string name="escolher_horario_inicial">Escolha um horário inicial</string>
+    <string name="escolher_horario_final">Escolha um horário final</string>
+    <string name="confirmar_cancelar_cadastro_horario">Você tem certeza que deseja cancelar o cadastro do horário?</string>
 
 </resources>

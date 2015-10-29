@@ -89,8 +89,6 @@ public class Disciplina implements Serializable {
         this.nomeProfessor = nomeProfessor;
     }
 
-    // Métodos
-
     public List<HorarioAula> getListaHorarios() {
         return listaHorarios;
     }

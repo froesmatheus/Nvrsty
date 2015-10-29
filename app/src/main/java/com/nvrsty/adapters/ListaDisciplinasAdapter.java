@@ -13,7 +13,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.nvrsty.R;
-import com.nvrsty.db.DBCore;
+import com.nvrsty.db.DB;
 import com.nvrsty.models.Disciplina;
 
 
@@ -34,9 +34,9 @@ public class ListaDisciplinasAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         Disciplina disciplina = new Disciplina();
 
-        disciplina.setNomeDisciplina(cursor.getString(cursor.getColumnIndex(DBCore.COLUNA_DISCIPLINAS_NOME_DISCIPLINA)));
-        disciplina.setNomeProfessor(cursor.getString(cursor.getColumnIndex(DBCore.COLUNA_DISCIPLINAS_NOME_PROFESSOR)));
-        disciplina.setCor(cursor.getInt(cursor.getColumnIndex(DBCore.COLUNA_DISCIPLINAS_COR)));
+        disciplina.setNomeDisciplina(cursor.getString(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_NOME_DISCIPLINA)));
+        disciplina.setNomeProfessor(cursor.getString(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_NOME_PROFESSOR)));
+        disciplina.setCor(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_COR)));
 
         TextView nomeMateria, nomeProfessor;
         View corHex;

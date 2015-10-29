@@ -3,4 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.nvrsty.activities.TelaInicial">
 
+
+
+    <item
+        android:id="@+id/action_ver_banco"
+        android:title="Ver banco"
+        app:showAsAction="never"/>
 </menu>

@@ -43,12 +43,14 @@ public class CadastrarHorario extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_horario);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Cadastrar horário");
+        toolbar.setTitle(R.string.title_activity_cadastrar_horario);
         toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.primary));
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setNavigationIcon(R.mipmap.ic_action_navigation_close);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         dataAtual = Calendar.getInstance();
@@ -100,12 +102,13 @@ public class CadastrarHorario extends AppCompatActivity {
                             horaInicio.set(Calendar.HOUR_OF_DAY, hourOfDay);
                             horaInicio.set(Calendar.MINUTE, minute);
                             horaInicio.set(Calendar.DAY_OF_WEEK, diaDaSemana);
-//                            horaInicio.set(0, 0, diaDaSemana, hourOfDay, minute);
-                            etHoraInicial.setText(format.format(hourOfDay) + ":" + format.format(minute));
+
+                            String horaInicialStr = format.format(hourOfDay) + ":" + format.format(minute);
+                            etHoraInicial.setText(horaInicialStr);
                         }
                     }, dataAtual.get(Calendar.HOUR_OF_DAY), dataAtual.get(Calendar.MINUTE), true);
 
-                    horarioInicialTimePicker.setTitle("Escolha um horário inicial");
+                    horarioInicialTimePicker.setTitle(R.string.escolher_horario_inicial);
                     horarioInicialTimePicker.show();
                 }
             }
@@ -138,12 +141,13 @@ public class CadastrarHorario extends AppCompatActivity {
                             horaFim.set(Calendar.HOUR_OF_DAY, hourOfDay);
                             horaFim.set(Calendar.MINUTE, minute);
                             horaFim.set(Calendar.DAY_OF_WEEK, diaDaSemana);
-//                            horaFim.set(0, 0, diaDaSemana, hourOfDay, minute);
-                            etHoraFinal.setText(format.format(hourOfDay) + ":" + format.format(minute));
+
+                            String horaFinalStr = format.format(hourOfDay) + ":" + format.format(minute);
+                            etHoraFinal.setText(horaFinalStr);
                         }
                     }, dataAtual.get(Calendar.HOUR_OF_DAY), dataAtual.get(Calendar.MINUTE), true);
 
-                    horarioFinalTimePicker.setTitle("Escolha um horário final");
+                    horarioFinalTimePicker.setTitle(R.string.escolher_horario_final);
                     horarioFinalTimePicker.show();
                 }
             }
@@ -226,8 +230,8 @@ public class CadastrarHorario extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarHorario.this);
 
-        builder.setTitle("Confirmar cancelamento");
-        builder.setMessage("Você tem certeza que deseja cancelar o cadastro do horário?");
+        builder.setTitle(R.string.confirmar_cancelamento);
+        builder.setMessage(R.string.confirmar_cancelar_cadastro_horario);
 
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override

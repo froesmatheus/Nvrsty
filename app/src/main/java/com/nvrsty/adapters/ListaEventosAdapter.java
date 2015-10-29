@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nvrsty.R;
-import com.nvrsty.db.DBCore;
+import com.nvrsty.db.DB;
 import com.nvrsty.db.DisciplinasDAO;
 import com.nvrsty.db.HorariosEventosDAO;
 import com.nvrsty.extras.Utils;
@@ -38,11 +38,11 @@ public class ListaEventosAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         Evento evento = new Evento();
 
-        evento.setId(cursor.getInt(cursor.getColumnIndex(DBCore.COLUNA_EVENTOS_ID)));
-        evento.setDisciplinaRelacionada(disciplinasDAO.getDisciplina(cursor.getInt(cursor.getColumnIndex(DBCore.COLUNA_EVENTOS_ID_DISCIPLINA))));
-        evento.setObservacoes(cursor.getString(cursor.getColumnIndex(DBCore.COLUNA_EVENTOS_OBSERVACOES)));
-        evento.setTipo(cursor.getInt(cursor.getColumnIndex(DBCore.COLUNA_EVENTOS_TIPO)));
-        evento.setHorarioEvento(horariosEventosDAO.getHorarioEvento(cursor.getInt(cursor.getColumnIndex(DBCore.COLUNA_EVENTOS_ID_HORARIO_EVENTO))));
+        evento.setId(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_EVENTOS_ID)));
+        evento.setDisciplinaRelacionada(disciplinasDAO.getDisciplina(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_EVENTOS_ID_DISCIPLINA))));
+        evento.setObservacoes(cursor.getString(cursor.getColumnIndex(DB.COLUNA_EVENTOS_OBSERVACOES)));
+        evento.setTipo(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_EVENTOS_TIPO)));
+        evento.setHorarioEvento(horariosEventosDAO.getHorarioEvento(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_EVENTOS_ID_HORARIO_EVENTO))));
 
         TextView disciplinaRelacionada = (TextView) view.findViewById(R.id.disciplina_relacionada);
         TextView horarioData = (TextView) view.findViewById(R.id.data_horario);

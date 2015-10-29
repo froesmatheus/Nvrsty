@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.nvrsty.R;
 import com.nvrsty.adapters.ListaDisciplinasAdapter;
@@ -46,7 +45,10 @@ public class CadastrarEvento extends AppCompatActivity {
 
         dataAtual = Calendar.getInstance(TimeZone.getDefault());
         dataEvento = Calendar.getInstance(TimeZone.getDefault());
-        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_action_navigation_close);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_action_navigation_close);
+
 
         if (getIntent() != null) {
             tipoEvento = getIntent().getIntExtra("tipo", -1);
@@ -82,7 +84,7 @@ public class CadastrarEvento extends AppCompatActivity {
                     }
                 });
 
-                builder.setNeutralButton("Adicionar nova disclipina", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton(R.string.adicionar_disciplina, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startActivity(new Intent(CadastrarEvento.this, CadastrarDisciplina.class));
@@ -133,21 +135,25 @@ public class CadastrarEvento extends AppCompatActivity {
         if (disciplina.getListaHorarios().size() > 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-            builder.setTitle("Horários preestabelecidos");
+            builder.setTitle(R.string.horarios_preestabelecidos);
 
             ListaHorariosAdapter adapter = new ListaHorariosAdapter(context, disciplina.getListaHorarios());
 
             builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    cpHorario.setText(disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.HOUR_OF_DAY) + ":"
-                            + disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.MINUTE));
+                    dataEvento.set(Calendar.HOUR_OF_DAY, disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.HOUR_OF_DAY));
+                    dataEvento.set(Calendar.MINUTE, disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.MINUTE));
+
+                    String horarioStr = disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.HOUR_OF_DAY) + ":"
+                            + disciplina.getListaHorarios().get(which).getHoraInicio().get(Calendar.MINUTE);
+                    cpHorario.setText(horarioStr);
                     cpBloco.setText(disciplina.getListaHorarios().get(which).getBloco());
                     cpSala.setText(disciplina.getListaHorarios().get(which).getSala());
                 }
             });
 
-            builder.setNeutralButton("Adicionar horário manualmente", new DialogInterface.OnClickListener() {
+            builder.setNeutralButton(R.string.adicionar_horario_manual, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     cpHorario.setText("");
@@ -173,7 +179,9 @@ public class CadastrarEvento extends AppCompatActivity {
                 dataEvento.set(Calendar.YEAR, year);
                 dataEvento.set(Calendar.MONTH, monthOfYear);
                 dataEvento.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                cpData.setText(format.format(dayOfMonth) + "/" + format.format(++monthOfYear) + "/" + year);
+
+                String dataStr = format.format(dayOfMonth) + "/" + format.format(++monthOfYear) + "/" + year;
+                cpData.setText(dataStr);
             }
         }, dataAtual.get(Calendar.YEAR), dataAtual.get(Calendar.MONTH), dataAtual.get(Calendar.DAY_OF_MONTH));
 
@@ -186,7 +194,9 @@ public class CadastrarEvento extends AppCompatActivity {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 dataEvento.set(Calendar.HOUR_OF_DAY, hourOfDay);
                 dataEvento.set(Calendar.MINUTE, minute);
-                cpHorario.setText(format.format(hourOfDay) + ":" + format.format(minute));
+
+                String horarioStr = format.format(hourOfDay) + ":" + format.format(minute);
+                cpHorario.setText(horarioStr);
             }
         }, dataAtual.get(Calendar.HOUR_OF_DAY), dataAtual.get(Calendar.MINUTE), true);
 
@@ -241,8 +251,8 @@ public class CadastrarEvento extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarEvento.this);
 
-        builder.setTitle("Confirmar cancelamento");
-        builder.setMessage("Você tem certeza que deseja cancelar o cadastro?");
+        builder.setTitle(R.string.confirmar_cancelamento);
+        builder.setMessage(R.string.confirmar_cancelar_cadastro);
 
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
@@ -267,21 +277,21 @@ public class CadastrarEvento extends AppCompatActivity {
         boolean passou = true;
 
         if (cpMateriaRelacionada.getText().toString().trim().isEmpty()) {
-            cpMateriaRelacionada.setError("Campo obrigatório");
+            cpMateriaRelacionada.setError(getString(R.string.campo_obrigatorio));
             passou = false;
         } else {
             cpMateriaRelacionada.setError(null);
         }
 
         if (cpData.getText().toString().trim().isEmpty()) {
-            cpData.setError("Campo obrigatório");
+            cpData.setError(getString(R.string.campo_obrigatorio));
             passou = false;
         } else {
             cpData.setError(null);
         }
 
         if (cpHorario.getText().toString().trim().isEmpty()) {
-            cpHorario.setError("Campo obrigatório");
+            cpHorario.setError(getString(R.string.campo_obrigatorio));
             passou = false;
         } else {
             cpHorario.setError(null);

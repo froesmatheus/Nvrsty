@@ -26,5 +26,6 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'de.hdodenhof:circleimageview:2.0.0'
     compile 'com.getbase:floatingactionbutton:1.10.0'
+    compile 'com.github.clans:fab:1.6.1'
 
 }

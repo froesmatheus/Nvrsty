@@ -84,6 +84,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/cp_data"
+        android:imeOptions="actionNext"
+        android:inputType="text"
         android:layout_alignEnd="@+id/cp_data" />
 
     <TextView
@@ -102,6 +104,8 @@
         android:id="@+id/cp_sala"
         android:layout_alignBottom="@+id/cp_bloco"
         android:layout_alignLeft="@+id/textView7"
+        android:imeOptions="actionNext"
+        android:inputType="text"
         android:layout_alignStart="@+id/textView7"
         android:layout_alignRight="@+id/cp_horario"
         android:layout_alignEnd="@+id/cp_horario" />
@@ -121,9 +125,10 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
+        android:imeOptions="normal"
         android:maxEms="10"
         android:maxLength="240"
-        android:gravity="left|top"
+        android:gravity="start|top"
         android:id="@+id/cp_observacoes"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
