@@ -228,6 +228,8 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
                         }
                         break;
                     case R.id.rb02:
+
+
                         toolbar.setSubtitle("Filtrando por dia (" + diaSpinner.getSelectedItem().toString() + ")");
                         break;
                 }
