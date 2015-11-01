@@ -16,11 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.nvrsty.R;
@@ -43,6 +45,8 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
     private EventosDAO dao;
     private SlidingTabLayout slidingTabLayout;
     private Toolbar toolbar;
+    private boolean rb01Selected, rb02Selected;
+    private int rbSelectedId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +99,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
         super.onPause();
         if (menu.isExpanded())
             menu.collapse();
-    }
+}
 
     @Override
     public void onClick(View v) {
@@ -171,10 +175,19 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
         RadioButton rb02 = (RadioButton) view.findViewById(R.id.rb02);
         final RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
 
+        if (rb01Selected) {
+            rb01.toggle();
+            disciplinaSpinner.setEnabled(true);
+        } else {
+            rb02.toggle();
+            diaSpinner.setEnabled(true);
+        }
+
         rb01.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 disciplinaSpinner.setEnabled(isChecked);
+                rb01Selected = isChecked;
             }
         });
 
@@ -182,6 +195,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 diaSpinner.setEnabled(isChecked);
+                rb01Selected = !isChecked;
             }
         });
 
@@ -212,6 +226,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int which) {
                 int id = radioGroup.getCheckedRadioButtonId();
 
+                rbSelectedId = disciplinaSpinner.getSelectedItemPosition();
                 Disciplina disciplina = (Disciplina) disciplinaSpinner.getSelectedItem();
 
                 switch (id) {
