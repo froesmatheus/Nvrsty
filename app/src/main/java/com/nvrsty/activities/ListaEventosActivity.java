@@ -6,23 +6,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.nvrsty.R;
@@ -38,7 +34,7 @@ import com.nvrsty.models.Evento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaEventos extends AppCompatActivity implements View.OnClickListener {
+public class ListaEventosActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewPager viewPager;
     private TabsAdapterEventos tabsAdapter;
     private FloatingActionsMenu menu;
@@ -120,7 +116,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-        intent = new Intent(ListaEventos.this, CadastrarEvento.class).putExtra("tipo", tipo);
+        intent = new Intent(ListaEventosActivity.this, CadastrarEventoActivity.class).putExtra("tipo", tipo);
         startActivityForResult(intent, 1);
     }
 
@@ -133,7 +129,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
             EventosFragment fragment = (EventosFragment) tabsAdapter.getItem(evento.getTipo());
 
             if (fragment.adapter == null) {
-                fragment.adapter = new ListaEventosAdapter(ListaEventos.this, dao.getEventosCursor(evento.getTipo()));
+                fragment.adapter = new ListaEventosAdapter(ListaEventosActivity.this, dao.getEventosCursor(evento.getTipo()));
             }
             fragment.adapter.changeCursor(dao.getEventosCursor(evento.getTipo()));
             fragment.adapter.notifyDataSetChanged();
@@ -236,7 +232,7 @@ public class ListaEventos extends AppCompatActivity implements View.OnClickListe
                             EventosFragment fragment = (EventosFragment) tabsAdapter.getItem(i);
 
                             if (fragment.adapter == null) {
-                                fragment.adapter = new ListaEventosAdapter(ListaEventos.this, dao.getEventosCursor(i, disciplina.getId()));
+                                fragment.adapter = new ListaEventosAdapter(ListaEventosActivity.this, dao.getEventosCursor(i, disciplina.getId()));
                             }
                             fragment.adapter.changeCursor(dao.getEventosCursor(i, disciplina.getId()));
                             fragment.adapter.notifyDataSetChanged();

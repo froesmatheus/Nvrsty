@@ -31,7 +31,7 @@ public class DisciplinasDAO {
         contentValues.put(DB.COLUNA_DISCIPLINAS_SIGLA, disciplina.getSigla());
         contentValues.put(DB.COLUNA_DISCIPLINAS_NOME_PROFESSOR, disciplina.getNomeProfessor());
         contentValues.put(DB.COLUNA_DISCIPLINAS_COR, disciplina.getCor());
-        contentValues.put(DB.COLUNA_DISCIPLINAS_UNIDADES, disciplina.getQtUnidades());
+        contentValues.put(DB.COLUNA_DISCIPLINAS_UNIDADES, disciplina.getQtdUnidades());
         contentValues.put(DB.COLUNA_DISCIPLINAS_FREQUENCIA, disciplina.getFrequencia());
 
         long rowID = db.insert(DB.TABELA_DISCIPLINAS, null, contentValues);
@@ -58,7 +58,7 @@ public class DisciplinasDAO {
         contentValues.put(DB.COLUNA_DISCIPLINAS_SIGLA, disciplina.getSigla());
         contentValues.put(DB.COLUNA_DISCIPLINAS_NOME_PROFESSOR, disciplina.getNomeProfessor());
         contentValues.put(DB.COLUNA_DISCIPLINAS_FREQUENCIA, disciplina.getFrequencia());
-        contentValues.put(DB.COLUNA_DISCIPLINAS_UNIDADES, disciplina.getQtUnidades());
+        contentValues.put(DB.COLUNA_DISCIPLINAS_UNIDADES, disciplina.getQtdUnidades());
         contentValues.put(DB.COLUNA_DISCIPLINAS_COR, disciplina.getCor());
 
         int status = db.update(DB.TABELA_DISCIPLINAS, contentValues, "_id = ?", new String[]{disciplina.getId() + ""});
@@ -85,7 +85,7 @@ public class DisciplinasDAO {
                 disciplina.setId(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_ID)));
                 disciplina.setCor(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_COR)));
                 disciplina.setFrequencia(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_FREQUENCIA)));
-                disciplina.setQtUnidades(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_UNIDADES)));
+                disciplina.setQtdUnidades(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_UNIDADES)));
                 disciplina.setListaHorarios(horariosDAO.getListaHorarios(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_ID))));
 
                 list.add(disciplina);
@@ -120,7 +120,7 @@ public class DisciplinasDAO {
             disciplina.setId(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_ID)));
             disciplina.setCor(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_COR)));
             disciplina.setFrequencia(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_FREQUENCIA)));
-            disciplina.setQtUnidades(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_UNIDADES)));
+            disciplina.setQtdUnidades(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_UNIDADES)));
             disciplina.setListaHorarios(horariosDAO.getListaHorarios(cursor.getInt(cursor.getColumnIndex(DB.COLUNA_DISCIPLINAS_ID))));
 
             cursor.close();

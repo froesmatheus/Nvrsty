@@ -10,9 +10,8 @@ import android.widget.ImageView;
 
 import com.nvrsty.R;
 import com.nvrsty.db.AndroidDatabaseManager;
-import com.nvrsty.db.DisciplinasDAO;
 
-public class TelaInicial extends AppCompatActivity implements View.OnClickListener {
+public class TelaInicialActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +24,9 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         ImageView btnEventos = (ImageView) findViewById(R.id.btn_eventos);
         btnEventos.setOnClickListener(this);
 
+        ImageView btnLembretes = (ImageView) findViewById(R.id.btn_lembretes);
+        btnLembretes.setOnClickListener(this);
+
     }
 
     @Override
@@ -34,11 +36,14 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
 
             case R.id.btn_materias:
-                intent = new Intent(getApplicationContext(), ListaDisciplinas.class);
+                intent = new Intent(getApplicationContext(), ListaDisciplinasActivity.class);
                 break;
             case R.id.btn_eventos:
-                intent = new Intent(getApplicationContext(), ListaEventos.class);
+                intent = new Intent(getApplicationContext(), ListaEventosActivity.class);
                 break;
+            case R.id.btn_lembretes:
+                intent = new Intent(getApplicationContext(), ListaLembretesActivity.class);
+
         }
         startActivity(intent);
     }

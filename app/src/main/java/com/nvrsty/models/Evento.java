@@ -12,7 +12,6 @@ public class Evento implements Serializable {
     public static final int ATIVIDADE = 2;
     public static final int TRABALHO = 3;
 
-
     private int tipo;
     private int id;
     private String observacoes;

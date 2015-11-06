@@ -6,7 +6,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.CadastrarEvento"/>
+        className = "com.nvrsty.activities.CadastrarEventoActivity"/>
       <point      
         x = "1760"      
         y = "1572"/>
@@ -14,7 +14,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.CadastrarDisciplina"/>
+        className = "com.nvrsty.activities.CadastrarDisciplinaActivity"/>
       <point      
         x = "-460"      
         y = "1624"/>
@@ -30,7 +30,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.CadastrarHorario"/>
+        className = "com.nvrsty.activities.CadastrarHorarioActivity"/>
       <point      
         x = "4290"      
         y = "1475"/>
@@ -38,7 +38,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.ListaEventos"/>
+        className = "com.nvrsty.activities.ListaEventosActivity"/>
       <point      
         x = "2621"      
         y = "444"/>
@@ -46,7 +46,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.TelaInicial"/>
+        className = "com.nvrsty.activities.TelaInicialActivity"/>
       <point      
         x = "657"      
         y = "1629"/>
@@ -54,7 +54,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.InformacoesMateria"/>
+        className = "com.nvrsty.activities.InformacoesMateriaActivity"/>
       <point      
         x = "1768"      
         y = "100"/>
@@ -62,7 +62,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.nvrsty.activities.ListaDisciplinas"/>
+        className = "com.nvrsty.activities.ListaDisciplinasActivity"/>
       <point      
         x = "500"      
         y = "100"/>

@@ -25,7 +25,7 @@ import com.nvrsty.models.HorarioAula;
 
 import java.util.List;
 
-public class InformacoesMateria extends AppCompatActivity {
+public class InformacoesMateriaActivity extends AppCompatActivity {
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
     private List<HorarioAula> listaHorarios;
@@ -133,7 +133,7 @@ public class InformacoesMateria extends AppCompatActivity {
                     intent.putExtra("status", "deletar");
                     intent.putExtra("disciplina", disciplina);
                     setResult(Activity.RESULT_OK, intent);
-                    InformacoesMateria.this.finish();
+                    InformacoesMateriaActivity.this.finish();
                 }
             }
         });

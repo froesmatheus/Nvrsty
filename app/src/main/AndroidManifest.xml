@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.TelaInicial"
+            android:name=".activities.TelaInicialActivity"
             android:label="@string/title_activity_tela_inicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,63 +17,80 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ListaDisciplinas"
+            android:name=".activities.ListaDisciplinasActivity"
             android:label="@string/title_activity_lista_materias"
-            android:parentActivityName=".activities.TelaInicial">
+            android:parentActivityName=".activities.TelaInicialActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.TelaInicial" />
+                android:value=".activities.TelaInicialActivity" />
         </activity>
         <activity
-            android:name=".activities.CadastrarDisciplina"
+            android:name=".activities.CadastrarDisciplinaActivity"
             android:label="@string/title_activity_cadastrar_disciplina"
-            android:parentActivityName=".activities.ListaDisciplinas"
+            android:parentActivityName=".activities.ListaDisciplinasActivity"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ListaDisciplinas" />
+                android:value=".activities.ListaDisciplinasActivity" />
         </activity>
         <activity
-            android:name=".activities.CadastrarHorario"
+            android:name=".activities.CadastrarHorarioActivity"
             android:label="@string/title_activity_cadastrar_horario"
-            android:parentActivityName=".activities.CadastrarDisciplina"
+            android:parentActivityName=".activities.CadastrarDisciplinaActivity"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.CadastrarDisciplina" />
+                android:value=".activities.CadastrarDisciplinaActivity" />
         </activity>
         <activity
-            android:name=".activities.ListaEventos"
+            android:name=".activities.ListaEventosActivity"
             android:label="@string/title_activity_lista_eventos"
-            android:parentActivityName=".activities.TelaInicial"
+            android:parentActivityName=".activities.TelaInicialActivity"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nvrsty.activities.TelaInicial" />
+                android:value=".activities.TelaInicialActivity" />
         </activity>
         <activity
-            android:name=".activities.CadastrarEvento"
+            android:name=".activities.CadastrarEventoActivity"
             android:label="@string/title_activity_cadastrar_evento"
-            android:parentActivityName=".activities.ListaEventos">
+            android:parentActivityName=".activities.ListaEventosActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nvrsty.activities.ListaEventos" />
+                android:value=".activities.ListaEventosActivity" />
         </activity>
         <activity
-            android:name=".activities.InformacoesMateria"
-            android:parentActivityName=".activities.ListaDisciplinas"
+            android:name=".activities.InformacoesMateriaActivity"
+            android:parentActivityName=".activities.ListaDisciplinasActivity"
             android:theme="@style/AppTheme2">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ListaDisciplinas" />
+                android:value=".activities.ListaDisciplinasActivity" />
+        </activity>
+        <activity android:name=".activities.AulasHoje" />
+        <activity
+            android:name=".db.AndroidDatabaseManager"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+
+        <activity
+            android:label="@string/title_activity_lista_lembretes"
+            android:name=".activities.ListaLembretesActivity"
+            android:parentActivityName=".activities.TelaInicialActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.TelaInicialActivity" />
         </activity>
 
-        <activity android:name=".activities.AulasHoje"></activity>
+        <activity
+            android:label="@string/title_activity_cadastrar_lembrete"
+            android:name=".activities.CadastrarLembreteActivity"
+            android:parentActivityName=".activities.ListaLembretesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.ListaLembretesActivity" />
 
-        <activity android:name="com.nvrsty.db.AndroidDatabaseManager"
-            android:theme="@style/Theme.AppCompat.Light"/>
+        </activity>
     </application>
-
-
 
 </manifest>

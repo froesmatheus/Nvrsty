@@ -9,37 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Disciplina implements Serializable {
-    private int id;
-    private String nomeDisciplina;
-    private String nomeProfessor;
-    private String sigla;
-    private int frequencia;
-    private int cor;
-    private int qtUnidades;
+    private int id, frequencia, cor, qtdUnidades;
+    private String nomeDisciplina, nomeProfessor, sigla;
     private List<HorarioAula> listaHorarios;
     private List<Evento> listaEventos;
 
-    public Disciplina(String nomeDisciplina, String nomeProfessor, String sigla, int frequencia, int cor, int qtUnidades, List<HorarioAula> listaHorarios) {
+    public Disciplina(String nomeDisciplina, String nomeProfessor, String sigla, int frequencia,
+                      int cor, int qtdUnidades, List<HorarioAula> listaHorarios) {
         this.nomeDisciplina = nomeDisciplina;
         this.nomeProfessor = nomeProfessor;
         this.sigla = sigla;
         this.frequencia = frequencia;
         this.cor = cor;
-        this.qtUnidades = qtUnidades;
+        this.qtdUnidades = qtdUnidades;
         this.listaHorarios = listaHorarios;
     }
 
     public Disciplina() {
         listaHorarios = new ArrayList<>();
-    }
-
-    public Disciplina(String nomeDisciplina, String nomeProfessor, int cor,
-                      List<HorarioAula> listaHorarios) {
-        this();
-        this.listaHorarios = listaHorarios;
-        this.nomeDisciplina = nomeDisciplina;
-        this.nomeProfessor = nomeProfessor;
-        this.cor = cor;
     }
 
     public int getId() {
@@ -50,12 +37,12 @@ public class Disciplina implements Serializable {
         this.id = id;
     }
 
-    public int getQtUnidades() {
-        return qtUnidades;
+    public int getQtdUnidades() {
+        return qtdUnidades;
     }
 
-    public void setQtUnidades(int qtUnidades) {
-        this.qtUnidades = qtUnidades;
+    public void setQtdUnidades(int qtdUnidades) {
+        this.qtdUnidades = qtdUnidades;
     }
 
     public int getFrequencia() {
@@ -74,20 +61,6 @@ public class Disciplina implements Serializable {
         this.sigla = sigla;
     }
 
-    public Disciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
-    }
-
-    public Disciplina(String nomeDisciplina, String nomeProfessor, int cor) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.nomeProfessor = nomeProfessor;
-        this.cor = cor;
-    }
-
-    public Disciplina(String nomeDisciplina, String nomeProfessor) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.nomeProfessor = nomeProfessor;
-    }
 
     public List<HorarioAula> getListaHorarios() {
         return listaHorarios;

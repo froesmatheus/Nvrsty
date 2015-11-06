@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +22,7 @@ import com.nvrsty.models.Disciplina;
 
 import java.util.List;
 
-public class ListaDisciplinas extends AppCompatActivity implements View.OnClickListener {
+public class ListaDisciplinasActivity extends AppCompatActivity implements View.OnClickListener {
     private List<Disciplina> listaDisciplinas;
     private ListaDisciplinasAdapter adapter;
     private boolean actionModeAberto;
@@ -120,7 +119,7 @@ public class ListaDisciplinas extends AppCompatActivity implements View.OnClickL
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Disciplina disciplina = disciplinasDAO.getDisciplina(id);
-                Intent intent = new Intent(getApplicationContext(), InformacoesMateria.class);
+                Intent intent = new Intent(getApplicationContext(), InformacoesMateriaActivity.class);
                 intent.putExtra("disciplina", disciplina);
                 startActivityForResult(intent, 2);
             }
@@ -136,7 +135,7 @@ public class ListaDisciplinas extends AppCompatActivity implements View.OnClickL
 
         switch (v.getId()) {
             case R.id.fab:
-                startActivityForResult(new Intent(getApplicationContext(), CadastrarDisciplina.class), 1);
+                startActivityForResult(new Intent(getApplicationContext(), CadastrarDisciplinaActivity.class), 1);
                 break;
         }
     }

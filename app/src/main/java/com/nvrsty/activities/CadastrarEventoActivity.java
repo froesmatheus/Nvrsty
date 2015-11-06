@@ -30,7 +30,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 
-public class CadastrarEvento extends AppCompatActivity {
+public class CadastrarEventoActivity extends AppCompatActivity {
     private DisciplinasDAO dao;
     private Calendar dataAtual, dataEvento;
     private NumberFormat format = NumberFormat.getInstance();
@@ -72,22 +72,22 @@ public class CadastrarEvento extends AppCompatActivity {
         cpMateriaRelacionada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarEvento.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarEventoActivity.this);
 
-                ListaDisciplinasAdapter adapter = new ListaDisciplinasAdapter(CadastrarEvento.this, dao.getDisciplinasCursor());
+                ListaDisciplinasAdapter adapter = new ListaDisciplinasAdapter(CadastrarEventoActivity.this, dao.getDisciplinasCursor());
                 builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         disciplinaRelacionada = disciplinas.get(which);
                         cpMateriaRelacionada.setText(disciplinaRelacionada.getNomeDisciplina());
-                        verificarHorarios(disciplinaRelacionada, CadastrarEvento.this);
+                        verificarHorarios(disciplinaRelacionada, CadastrarEventoActivity.this);
                     }
                 });
 
                 builder.setNeutralButton(R.string.adicionar_disciplina, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(CadastrarEvento.this, CadastrarDisciplina.class));
+                        startActivity(new Intent(CadastrarEventoActivity.this, CadastrarDisciplinaActivity.class));
                     }
                 });
 
@@ -173,7 +173,7 @@ public class CadastrarEvento extends AppCompatActivity {
     }
 
     public void mostrarDatePicker() {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(CadastrarEvento.this, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(CadastrarEventoActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 dataEvento.set(Calendar.YEAR, year);
@@ -189,7 +189,7 @@ public class CadastrarEvento extends AppCompatActivity {
     }
 
     public void mostrarTimePicker() {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(CadastrarEvento.this, new TimePickerDialog.OnTimeSetListener() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(CadastrarEventoActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 dataEvento.set(Calendar.HOUR_OF_DAY, hourOfDay);
@@ -249,7 +249,7 @@ public class CadastrarEvento extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarEvento.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarEventoActivity.this);
 
         builder.setTitle(R.string.confirmar_cancelamento);
         builder.setMessage(R.string.confirmar_cancelar_cadastro);
@@ -257,7 +257,7 @@ public class CadastrarEvento extends AppCompatActivity {
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CadastrarEvento.this.finish();
+                CadastrarEventoActivity.this.finish();
                 dialog.dismiss();
             }
         });

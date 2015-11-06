@@ -8,19 +8,10 @@ import java.io.Serializable;
 import java.util.Calendar;
 
 public class HorarioAula implements Serializable {
-    private int diaSemana;
-    private int id;
-    private int idDisciplinaRelacionada;
+    private int id, idDisciplinaRelacionada, diaSemana;
     private Calendar horaInicio;
     private Calendar horaFim;
-    private String bloco;
-    private String sala;
-
-    @Override
-    public String toString() {
-        return horaInicio.get(Calendar.HOUR_OF_DAY) + ":" + horaInicio.get(Calendar.MINUTE) + " " +
-                "- " + horaFim.get(Calendar.HOUR_OF_DAY) + ":" + horaFim.get(Calendar.MINUTE);
-    }
+    private String bloco, sala;
 
     public HorarioAula() {
 
@@ -90,4 +81,9 @@ public class HorarioAula implements Serializable {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return horaInicio.get(Calendar.HOUR_OF_DAY) + ":" + horaInicio.get(Calendar.MINUTE) + " " +
+                "- " + horaFim.get(Calendar.HOUR_OF_DAY) + ":" + horaFim.get(Calendar.MINUTE);
+    }
 }

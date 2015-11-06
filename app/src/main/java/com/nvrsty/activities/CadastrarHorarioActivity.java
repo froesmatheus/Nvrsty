@@ -6,30 +6,25 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.nvrsty.R;
-import com.nvrsty.extras.Utils;
 import com.nvrsty.models.HorarioAula;
 
 import java.text.NumberFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.TimeZone;
 
-public class CadastrarHorario extends AppCompatActivity {
+public class CadastrarHorarioActivity extends AppCompatActivity {
     private TimePickerDialog horarioInicialTimePicker;
     private TimePickerDialog horarioFinalTimePicker;
     private int diaDaSemana;
@@ -68,9 +63,9 @@ public class CadastrarHorario extends AppCompatActivity {
         etDiaSemana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarHorario.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarHorarioActivity.this);
 
-                final ArrayAdapter<String> listAdapter = new ArrayAdapter<>(CadastrarHorario.this, android.R.layout.simple_list_item_1);
+                final ArrayAdapter<String> listAdapter = new ArrayAdapter<>(CadastrarHorarioActivity.this, android.R.layout.simple_list_item_1);
                 listAdapter.add("Segunda-feira");
                 listAdapter.add("Terça-feira");
                 listAdapter.add("Quarta-feira");
@@ -96,7 +91,7 @@ public class CadastrarHorario extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    horarioInicialTimePicker = new TimePickerDialog(CadastrarHorario.this, new TimePickerDialog.OnTimeSetListener() {
+                    horarioInicialTimePicker = new TimePickerDialog(CadastrarHorarioActivity.this, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             horaInicio.set(Calendar.HOUR_OF_DAY, hourOfDay);
@@ -117,7 +112,7 @@ public class CadastrarHorario extends AppCompatActivity {
 //        etHoraInicial.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                horarioInicialTimePicker = new TimePickerDialog(CadastrarHorario.this, new TimePickerDialog.OnTimeSetListener() {
+//                horarioInicialTimePicker = new TimePickerDialog(CadastrarHorarioActivity.this, new TimePickerDialog.OnTimeSetListener() {
 //                    @Override
 //                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 //                        horaInicio.set(Calendar.HOUR_OF_DAY, hourOfDay);
@@ -135,7 +130,7 @@ public class CadastrarHorario extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    horarioFinalTimePicker = new TimePickerDialog(CadastrarHorario.this, new TimePickerDialog.OnTimeSetListener() {
+                    horarioFinalTimePicker = new TimePickerDialog(CadastrarHorarioActivity.this, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             horaFim.set(Calendar.HOUR_OF_DAY, hourOfDay);
@@ -156,7 +151,7 @@ public class CadastrarHorario extends AppCompatActivity {
 //        etHoraFinal.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                horarioFinalTimePicker = new TimePickerDialog(CadastrarHorario.this, new TimePickerDialog.OnTimeSetListener() {
+//                horarioFinalTimePicker = new TimePickerDialog(CadastrarHorarioActivity.this, new TimePickerDialog.OnTimeSetListener() {
 //                    @Override
 //                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 //                        horaFim.set(Calendar.HOUR_OF_DAY, hourOfDay);
@@ -228,7 +223,7 @@ public class CadastrarHorario extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarHorario.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarHorarioActivity.this);
 
         builder.setTitle(R.string.confirmar_cancelamento);
         builder.setMessage(R.string.confirmar_cancelar_cadastro_horario);
@@ -236,7 +231,7 @@ public class CadastrarHorario extends AppCompatActivity {
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CadastrarHorario.this.finish();
+                CadastrarHorarioActivity.this.finish();
                 dialog.dismiss();
             }
         });

@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.nvrsty.R;
-import com.nvrsty.activities.CadastrarHorario;
+import com.nvrsty.activities.CadastrarHorarioActivity;
 import com.nvrsty.adapters.ListaHorariosAdapter;
 import com.nvrsty.models.Disciplina;
 import com.nvrsty.models.HorarioAula;
@@ -51,7 +51,7 @@ public class HorariosFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CadastrarHorario.class);
+                Intent intent = new Intent(getActivity(), CadastrarHorarioActivity.class);
                 startActivityForResult(intent, 1);
             }
         });

@@ -8,14 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -102,8 +100,8 @@ public class InformacoesGeraisFragment extends Fragment implements View.OnClickL
             cpNomeProfessor.setEnabled(false);
             cpSigla.setText(disciplina.getSigla());
             cpSigla.setEnabled(false);
-            qtUnidades = disciplina.getQtUnidades();
-            cpUnidades.setText(String.valueOf(disciplina.getQtUnidades()));
+            qtUnidades = disciplina.getQtdUnidades();
+            cpUnidades.setText(String.valueOf(disciplina.getQtdUnidades()));
             cpUnidades.setEnabled(false);
             seletorCor.setImageDrawable(new ColorDrawable(disciplina.getCor()));
             seletorCor.setEnabled(false);

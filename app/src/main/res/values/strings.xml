@@ -50,5 +50,12 @@
     <string name="escolher_horario_inicial">Escolha um horário inicial</string>
     <string name="escolher_horario_final">Escolha um horário final</string>
     <string name="confirmar_cancelar_cadastro_horario">Você tem certeza que deseja cancelar o cadastro do horário?</string>
+    <string name="confirmar_cancelar_cadastro_lembrete">Você tem certeza que deseja cancelar o cadastro do lembrete?</string>
+    <string name="titulo_lembrete">Título</string>
+    <string name="lembrete">Lembrete</string>
+    <string name="momento_txt">Hora do dia</string>
+    <string name="hora_txt">00:00</string>
+    <string name="title_activity_cadastrar_lembrete">Cadastrar lembrete</string>
+    <string name="title_activity_lista_lembretes">Lembretes</string>
 
 </resources>

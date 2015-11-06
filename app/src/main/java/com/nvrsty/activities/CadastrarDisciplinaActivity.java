@@ -25,7 +25,7 @@ import com.nvrsty.models.HorarioAula;
 
 import java.util.List;
 
-public class CadastrarDisciplina extends AppCompatActivity {
+public class CadastrarDisciplinaActivity extends AppCompatActivity {
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
     private List<HorarioAula> listaHorarios;
@@ -145,7 +145,7 @@ public class CadastrarDisciplina extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarDisciplina.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarDisciplinaActivity.this);
 
         builder.setTitle("Confirmar cancelamento");
         builder.setMessage("Você tem certeza que deseja cancelar o cadastro?");
@@ -153,7 +153,7 @@ public class CadastrarDisciplina extends AppCompatActivity {
         builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                CadastrarDisciplina.this.finish();
+                CadastrarDisciplinaActivity.this.finish();
                 dialog.dismiss();
             }
         });
